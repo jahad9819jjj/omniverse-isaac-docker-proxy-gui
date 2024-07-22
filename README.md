@@ -19,5 +19,17 @@ fuser -k 34080/tcp
 ```
 Clone this repository and change directory
 ```
-git clone 
+git clone https://github.com/kentar0kozai/omniverse-isaac-docker-proxy-gui.git
+omniverse-isaac-docker-proxy-gui
+```
+Run docker compose  
+*Download and installation takes a long time
+```
+docker compose up
+```
+Success if Container isaac-sim-enhanced Created / Attaching to isaac-sim-enhanced is displayed.  
+  
+Run the command in a separate terminal
+```
+
 ```
