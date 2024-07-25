@@ -24,16 +24,23 @@ docker login nvcr.io
 5. Clone this repository and change directory
 ```
 git clone https://github.com/kentar0kozai/omniverse-isaac-docker-proxy-gui.git
-omniverse-isaac-docker-proxy-gui
+cd omniverse-isaac-docker-proxy-gui
 ```
-6. Run docker compose  
+6. Modify line 8 of the Dockerfile to your own proxy and port
+```
+e.g.
+ENV PROXY=***.***.***.***:**
+￬
+ENV PROXY=192.0.2.1:8080
+```
+7. Run docker compose  
 *Download and installation takes a long time
 ```
 docker compose up
 ```
-7. Success if Container isaac-sim-enhanced Created / Attaching to isaac-sim-enhanced is displayed.  
+8. Success if Container isaac-sim-enhanced Created / Attaching to isaac-sim-enhanced is displayed.  
   
-8. Run the command in another terminal
+9. Run the command in another terminal
 ```
 docker exec -it isaac-sim-enhanced bash
 ```
