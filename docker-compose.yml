@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  isaac-sim:
+    build: .
+    container_name: isaac-sim-enhanced
+    privileged: true
+    entrypoint: bash
+    environment:
+      DISPLAY: :0
+      ACCEPT_EULA: "Y"
+      PRIVACY_CONSENT: "Y"
+    network_mode: host
+    volumes:
+      - ~/docker/isaac-sim/cache/kit:/isaac-sim/kit/cache:rw
+      - ~/docker/isaac-sim/cache/ov:/root/.cache/ov:rw
+      - ~/docker/isaac-sim/cache/pip:/root/.cache/pip:rw
+      - ~/docker/isaac-sim/cache/glcache:/root/.cache/nvidia/GLCache:rw
+      - ~/docker/isaac-sim/cache/computecache:/root/.nv/ComputeCache:rw
+      - ~/docker/isaac-sim/logs:/root/.nvidia-omniverse/logs:rw
+      - ~/docker/isaac-sim/data:/root/.local/share/ov/data:rw
+      - ~/docker/isaac-sim/documents:/root/Documents:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    restart: always
+    tty: true
