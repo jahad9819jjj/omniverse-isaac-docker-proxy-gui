@@ -74,7 +74,12 @@ RUN apt-fast install -y \
     yaru-theme-icon \
     lshw \
     lshw-gtk \
-    lsof
+    lsof \
+    gnome-terminal \
+    locales
+
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
 RUN gtk-update-icon-cache /usr/share/icons/Yaru
 RUN mkdir /usr/share/desktop-directories/
