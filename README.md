@@ -53,7 +53,7 @@ ov-launcher
 
 3. Select the NUCLEUS tab and register the local server.
 
-4. Click 'Connect to a Server' to connect to the localhost server.
+4. Click 'Connect to a Server' to connect to the localhost server.  
    *Log in with ID: admin, Password: admin if you cannot log in.
 
 5. Select the EXCHANGE tab and install 'Cache'.
